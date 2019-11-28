@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xufx.mapper.test.ModuleMapper">
+  <resultMap id="BaseResultMap" type="com.xufx.entity.test.Module">
+    <id column="mid" jdbcType="INTEGER" property="mid" />
+    <result column="mname" jdbcType="VARCHAR" property="mname" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    mid, mname
+  </sql>
+  <select id="selectById" resultType="com.xufx.entity.test.Module">
+    select *  from module where mid=#{mid}
+  </select>
+</mapper>

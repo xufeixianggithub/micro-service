@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: micro-service
+  profiles:
+    active: dev
+logging:
+  level:
+    root: info
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+    hostname: microservice
+  client:
+    service-url:
+      defaultZone: http://47.107.99.108:9001/eureka

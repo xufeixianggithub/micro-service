@@ -1,0 +1,18 @@
+#这里是一个全局配置，这里的配置在dev，test，prod都可以使用到
+
+#可用于切换环境（开发，测试，正式）
+#部署命令 java -jar jar包路径 --spring.profiles.active=dev或者test或者prod
+spring:
+  profiles:
+    active: dev
+  application:
+    name: micro-service
+server:
+  port: 8080
+
+mybatis:
+    mapper-locations: classpath*:mybatis/mapper/**/*.xml
+    type-aliases-package: com.xufx.entity.*
+    configuration:
+      map-underscore-to-camel-case: true
+

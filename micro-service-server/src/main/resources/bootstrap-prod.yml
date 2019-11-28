@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: micro-service
+logging:
+  level:
+    root: info
+eureka:
+  instance:
+    instance-id: ${eureka.instance.hostname}:${spring.application.name}:${server.port}
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://seeapp:seeapp@10.0.2.8:8181/eureka,http://seeapp:seeapp@10.0.2.4:8181/eureka,http://seeapp:seeapp@10.0.2.9:8181/eureka
