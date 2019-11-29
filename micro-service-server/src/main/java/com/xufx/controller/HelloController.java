@@ -1,5 +1,6 @@
 package com.xufx.controller;
 
+import com.xufx.api.TestApi;
 import com.xufx.config.Girl;
 import com.xufx.entity.test.Module;
 import com.xufx.service.test.TestService;
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class HelloController {
+public class HelloController implements TestApi {
     @Value("${name}")
     private String name;
     @Autowired
