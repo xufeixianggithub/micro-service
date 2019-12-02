@@ -18,19 +18,25 @@ public class HelloController implements TestApi {
     private Girl girl;
     @Autowired
     private TestService testService;
+
     @RequestMapping(value = "/hello",method = RequestMethod.GET)
+    @Override
     public String say(){
         //return name+": hello";
         return girl.getName();
     }
 
     @RequestMapping(value = "/test",method = RequestMethod.GET)
+    @Override
     public String test1(){
         //return name+": hello";
         Module module=testService.getModuleById(1);
         return girl.getName();
     }
 
-
+    @Override
+    public String test2(String value) {
+        return value;
+    }
 }
 

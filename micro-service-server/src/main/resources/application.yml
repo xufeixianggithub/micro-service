@@ -4,7 +4,7 @@
 #部署命令 java -jar jar包路径 --spring.profiles.active=dev或者test或者prod
 spring:
   profiles:
-    active: dev
+    active: local
   application:
     name: micro-service
 server:

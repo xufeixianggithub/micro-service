@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 public interface TestApi {
     @RequestMapping(value = "/say", method = RequestMethod.GET)
-    String say(@RequestParam("") String value);
+    String say();
 
     @RequestMapping(value = "/test1", method = RequestMethod.GET)
-    String test1(@RequestParam("") String value);
+    String test1();
 
     @RequestMapping(value = "/test2", method = RequestMethod.GET)
     String test2(@RequestParam(required = false, value = "backendUserId") String value);
