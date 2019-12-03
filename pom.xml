@@ -15,20 +15,28 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.xufx</groupId>
-	<artifactId>microservice</artifactId>
+	<artifactId>micro-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>microservice</name>
+	<name>micro-service</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
 		<java.version>1.8</java.version>
 		<spring-cloud.version>Greenwich.SR1</spring-cloud.version>
+		<tk.mybatis.version>2.1.5</tk.mybatis.version>
 	</properties>
 
 	<dependencies>
-		<dependency>
+		<!--解决启动报错找不到 com.netflix.hystrix.contrib.javanica.aop.aspectj.HystrixCommandAspect-->
+		<!--<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+		</dependency>-->
+
+		<dependency>
+			<groupId>tk.mybatis</groupId>
+			<artifactId>mapper-spring-boot-starter</artifactId>
+			<version>${tk.mybatis.version}</version>
 		</dependency>
 
 		<dependency>
@@ -46,6 +54,21 @@
 
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>com.xufx</groupId>
+				<artifactId>micro-service-api</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.xufx</groupId>
+				<artifactId>micro-service-server</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.xufx</groupId>
+				<artifactId>micro-service-service</artifactId>
+				<version>${project.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>

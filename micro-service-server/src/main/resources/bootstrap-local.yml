@@ -9,7 +9,7 @@ logging:
 eureka:
   instance:
     instance-id: ${spring.application.name}:${server.port}
-    hostname: microservice
+    hostname: 127.0.0.1
   client:
     service-url:
       defaultZone: http://127.0.0.1:9001/eureka

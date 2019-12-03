@@ -2,7 +2,7 @@ spring:
   application:
     name: micro-service
   profiles:
-    active: dev
+    active: local
 logging:
   config: classpath:logback-spring.xml
   path: /data/log

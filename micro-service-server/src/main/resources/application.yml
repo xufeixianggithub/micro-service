@@ -16,3 +16,15 @@ mybatis:
     configuration:
       map-underscore-to-camel-case: true
 
+feign:
+  hystrix:
+    enabled: true
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 20000
+

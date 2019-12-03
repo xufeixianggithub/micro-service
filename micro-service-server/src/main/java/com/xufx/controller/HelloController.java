@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/service")
 public class HelloController implements TestApi {
     @Value("${name}")
     private String name;
@@ -19,10 +20,11 @@ public class HelloController implements TestApi {
     @Autowired
     private TestService testService;
 
-    @RequestMapping(value = "/hello",method = RequestMethod.GET)
+    @RequestMapping(value = "/say",method = RequestMethod.GET)
     @Override
     public String say(){
         //return name+": hello";
+        //int i=5/0;
         return girl.getName();
     }
 
